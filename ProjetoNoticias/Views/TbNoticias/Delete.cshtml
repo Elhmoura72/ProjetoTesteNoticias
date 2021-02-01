@@ -1,0 +1,52 @@
+﻿@model ProjetoNoticias.Models.TbNoticias
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Deletar Noticia</h2>
+
+<h3>Deseja deletar a Noticia?</h3>
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+        <dd>
+            @Convert.ToDateTime(Model.Data).ToString("dd-MM-yyyy")
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Autor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Autor.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Categoria.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd>
+            @Html.TextAreaFor(model => model.Descricao, new { @class = "form-control mt-2", @rows = "10", @readonly = "readonly" })
+            @*@Html.DisplayFor(model => model.Descricao)*@
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Voltar para Lista</a>
+    </form>
+</div>

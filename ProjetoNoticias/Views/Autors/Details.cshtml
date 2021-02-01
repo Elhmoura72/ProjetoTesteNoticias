@@ -1,0 +1,24 @@
+﻿@model ProjetoNoticias.Models.TbAutor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalhe do Autor</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Alterar</a> |
+    <a asp-action="Index">Voltar para Lista</a>
+</div>

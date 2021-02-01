@@ -1,0 +1,29 @@
+﻿@model ProjetoNoticias.Models.TbCategoria
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Deletar Categoria</h2>
+
+<h3>Voce deseja deletar Categoria?</h3>
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+    </dl>
+    <div class="row m-3">
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar para Lista</a>
+    </form>
+</div>

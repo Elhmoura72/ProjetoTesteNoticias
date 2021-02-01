@@ -1,0 +1,17 @@
+﻿
+@model string
+
+
+
+@if (Model != "Login")
+{
+    <p class="text-white m-2" style="font-size:18px">@Model</p>
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Login" asp-action="Logout">Logout</a>
+    </li>
+}
+else
+{
+<a class="navbar-brand" asp-controller="Login" asp-action="Logar">@Model</a>
+}
+
